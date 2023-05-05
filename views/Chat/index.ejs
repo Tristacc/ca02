@@ -1,0 +1,9 @@
+<form method="POST" action="<%=`/chat/${user._id}`%>">
+    <input type="text" name="prompt">
+    <input type="submit" value="ask chatGPT">
+</form>
+<a href="/chat/show">Questions you ask</a>
+<% if(Res){%>
+<h1>Your question: <%= Res[0].prompt %></h1><br />
+<h3>Answer: <%= Res[0].answer %></h3><br />
+<%}%>

@@ -38,7 +38,6 @@ router.get('/cat', isLoggedIn,
                 isliked: false,
             });
             await catImg.save();
-            const user = res.locals.user;
             res.render('Cat/index', { imageUrl: catImg });
         } catch (error) {
             console.error('Error fetching image to vote on:', error);
@@ -67,7 +66,6 @@ router.get('/cat/show', isLoggedIn,
             const user = res.locals.user;
             const populatedUser = await User.findById(user._id).populate('catImgs');
             const catImgs = populatedUser.catImgs;
-            console.log(catImgs);
             res.render('Cat/show', { Img: catImgs });
 
         } catch (error) {

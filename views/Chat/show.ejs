@@ -1,0 +1,9 @@
+<% if(Res){ Res.forEach(r=>{ %>
+<div>
+    <h3>Q: <%= r.prompt %></h3>
+    <h3>A: <%= r.answer %></h3>
+    <br />
+</div>
+
+<% }) %>
+<% }%>
