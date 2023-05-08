@@ -21,8 +21,6 @@ router.get('/chat', isLoggedIn,
 createPrompt = async (req, res, next) => {
     const prompts =
         `You need to answer this question as you are a five years old child: ${req.body.prompt}`;
-
-
     response =
         await axios.post('http://gracehopper.cs-i.brandeis.edu:3500/openai',
             { prompt: prompts })
